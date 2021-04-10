@@ -1,6 +1,63 @@
 {
   "_streams.json_Info": "streams.json is a file store in the site root use for listing stream url for radio, tv, webradio or webtv.",
   "_streams.json_Date": "2021-04-10",
-  "_streams.json_Include": "networkradio.json",
-  "_streams.json_Version": "0.1"
+  "_streams.json_Version": "0.1",
+
+  "name": "NetworkRadio",
+  "description": "NetworkRadio is a network of Internet station.",
+  "url": "https://www.networkradio.tld",
+  "stations": [{
+    "name": "Network Radio Dance",
+    "description": "Network Radio Dance is a Internet station since 2001.",
+    "genre": "Dance",
+    "url": "https://www.networkradio.tld/dance",
+    "streams": {
+      "type": "mp3",
+      "bitrate": 128,
+      "url": "http://stream.networkradio.tld/dance.mp3"
+    }
+  },
+  {
+    "name": "Network Radio Pop Rock",
+    "description": "Network Radio Pop Rock is a Internet station since 2001.",
+    "genre": "Pop, Rock",
+    "url": "https://www.networkradio.tld/poprock",
+    "streams": [{
+      "type": "mp3",
+      "bitrate": 128,
+      "url": "http://stream.networkradio.tld/poprock.mp3"
+    },
+    {
+      "type": "aac",
+      "bitrate": 64,
+      "url": [
+        "http://stream-a.networkradio.tld/poprock.aac",
+        "http://stream-b.networkradio.tld/poprock.aac"
+      ]
+    }]
+  },
+  {
+    "name": "Network Radio Hit",
+    "description": "Network Radio Hit is a Internet station since 2001.",
+    "genre": "Hits",
+    "url": "https://www.networkradio.tld/hit",
+    "streams": [{
+      "type": "mp3",
+      "bitrate": 128,
+      "url": [
+        "http://stream.networkradio.tld/hit.mp3",
+        "http://stream-a.networkradio.tld/hit.mp3",
+        "http://stream-b.networkradio.tld/hit.mp3"
+      ]
+    },
+    {
+      "type": "aac",
+      "bitrate": 64,
+      "url": [
+        "http://stream.networkradio.tld/hit.aac",
+        "http://stream-a.networkradio.tld/hit.aac",
+        "http://stream-b.networkradio.tld/hit.aac"
+      ]
+    }]
+  }]
 }
