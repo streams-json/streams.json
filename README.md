@@ -1,5 +1,5 @@
 # streams.json
-`streams.json` is a file store in the site root use for listing stream url for radio, tv, webradio or webtv.
+`streams.json` is a file store in the site root use for stream url for radio, tv, webradio or webtv.
 
 ## What is streams.json for?
 
