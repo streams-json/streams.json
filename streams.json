@@ -1,7 +1,7 @@
 {
   "_streams.json_Info": "streams.json is a file store in the site root use for listing stream url for radio, tv, webradio or webtv.",
-  "_streams.json_FileCreatedAt": "2021-04-13T13:54:02+02:00",
-  "_streams.json_Version": "0.2",
+  "_streams.json_FileCreatedAt": "2021-04-13T19:58:02+02:00",
+  "_streams.json_Version": "0.3",
 
   "name": "NetworkRadio",
   "description": "NetworkRadio is a network of Internet station.",
@@ -24,7 +24,10 @@
     "streams": {
       "type": "mp3",
       "bitrate": 128,
-      "url": "http://stream.networkradio.tld/dance.mp3"
+      "server": {
+        "location": "FR",
+        "url": "http://stream.networkradio.tld/dance.mp3"
+      }
     }
   },
   {
@@ -40,15 +43,22 @@
     "streams": [{
       "type": "mp3",
       "bitrate": 128,
-      "url": "http://stream.networkradio.tld/poprock.mp3"
+      "server": {
+        "location": "DE",
+        "url": "http://stream.networkradio.tld/poprock.mp3"
+      }
     },
     {
       "type": "aac",
       "bitrate": 64,
-      "url": [
-        "http://stream-a.networkradio.tld/poprock.aac",
-        "http://stream-b.networkradio.tld/poprock.aac"
-      ]
+      "server": [{
+        "priority": 1,
+        "url": "http://stream-a.networkradio.tld/poprock.aac"
+      },
+      {
+        "priority": 2,
+        "url": "http://stream-b.networkradio.tld/poprock.aac"
+      }]
     }]
   },
   {
@@ -64,11 +74,20 @@
     "streams": [{
       "type": "mp3",
       "bitrate": 128,
-      "url": [
-        "http://stream.networkradio.tld/hit.mp3",
-        "http://stream-a.networkradio.tld/hit.mp3",
-        "http://stream-b.networkradio.tld/hit.mp3"
-      ]
+      "server": [{
+        "priority": 1,
+        "url": "http://stream.networkradio.tld/hit.mp3"
+      },
+      {
+        "priority": 2,
+        "location": "PE",
+        "url": "http://stream-a.networkradio.tld/hit.mp3"
+      },
+      {
+        "priority": 3,
+        "location": "US",
+        "url": "http://stream-b.networkradio.tld/hit.mp3"
+      }]
     },
     {
       "type": "aac",
