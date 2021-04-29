@@ -1,11 +1,14 @@
 {
   "_streams.json_Info": "streams.json is a file store in the site root use for listing stream url for radio, tv, webradio or webtv.",
-  "_streams.json_FileCreatedAt": "2021-04-13T19:58:02+02:00",
-  "_streams.json_Version": "0.3",
+  "_streams.json_FileCreatedAt": "2021-04-29T13:59:32+02:00",
+  "_streams.json_Version": "0.0.4",
 
   "name": "NetworkRadio",
   "description": "NetworkRadio is a network of Internet station.",
   "url": "https://www.networkradio.tld",
+  "location": "FR",
+  "city": "Paris",
+  "languages": ["fr","en"],
   "logo": [{
     "type": "square",
     "size": 200,
