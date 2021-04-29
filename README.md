@@ -19,6 +19,11 @@ Like: ```https://domain.tld/streams.json```
 No, you can put it if you want and if you need it.
 In the near futur we would like directories use it to update or save informations automatically.
 
+## ISO types for Languages, Country and Location(s)
+
+Language: [2-letter ISO-639-1 Codes](https://en.wikipedia.org/wiki/ISO_639-1)
+Country and Location(s): [ISO 3166-1 Alpha-2 code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+
 ## Sites using streams.json
 
 - [MOROW](https://www.morow.com)
