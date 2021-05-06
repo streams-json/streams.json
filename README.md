@@ -26,7 +26,7 @@ Country and Location(s): [ISO 3166-1 Alpha-2 code](https://en.wikipedia.org/wiki
 
 ## Create / Update / Check my streams.json file
 
-On [our website](https://stream-json.rocketip.net) you can:
+On [our website](https://streams-json.rocketip.net) you can:
 - generate your streams.json file
 - update your streams.json file to the last version to be up to date
 - check your streams.json file
