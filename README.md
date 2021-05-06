@@ -24,9 +24,16 @@ In the near futur we would like directories use it to update or save information
 Language: [2-letter ISO-639-1 Codes](https://en.wikipedia.org/wiki/ISO_639-1)
 Country and Location(s): [ISO 3166-1 Alpha-2 code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
 
+## Create / Update / Check my streams.json file
+
+On [our website](https://stream-json.rocketip.net) you can:
+- generate your streams.json file
+- update your streams.json file to the last version to be up to date
+- check your streams.json file
+
 ## Sites using streams.json
 
 - [MOROW](https://www.morow.com)
 - and many more…
 
-Are you using streams.json? [Add your website](https://github.com/streams-json/streams.json/edit/master/WEBSITES.md) to the list!
+Are you using streams.json? [Add your website](https://github.com/streams-json/streams.json/edit/main/WEBSITES.md) to the list!
