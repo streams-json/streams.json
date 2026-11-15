@@ -107,6 +107,12 @@ On [our website](https://streams-json.rocketip.net) you can:
 - update your streams.json file to the last version to be up to date
 - check your streams.json file
 
+## Create playlists from my streams.json file
+
+The [playlist generator](https://streams-json.github.io/playlist-php/) turns a streams.json file into `m3u` or `xspf` playlists, one per stream, packed in a zip file. It runs in the browser; a command line version is available in [playlist-php](https://github.com/streams-json/playlist-php).
+
+To let it, and other web tools, read your file from its URL, serve `streams.json` with the `Access-Control-Allow-Origin: *` header.
+
 ## Sites using streams.json
 
 - [MOROW](https://www.morow.com)
