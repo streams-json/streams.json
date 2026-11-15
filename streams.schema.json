@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/streams-json/streams.json/main/streams.schema.json",
+  "title": "streams.json",
+  "description": "A file stored in the site root that lists the stream URLs of a radio, TV, webradio or webTV.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "name", "stations"],
+  "properties": {
+    "$schema": {
+      "description": "URL of the JSON Schema this file follows.",
+      "type": "string",
+      "format": "uri"
+    },
+    "version": {
+      "description": "Version of the streams.json format used by this file.",
+      "type": "string",
+      "pattern": "^0\\.5\\.(0|[1-9][0-9]*)$",
+      "examples": ["0.5.0"]
+    },
+    "generated_at": {
+      "description": "Date and time the file was generated (RFC 3339).",
+      "type": "string",
+      "format": "date-time"
+    },
+    "name": {
+      "description": "Name of the broadcaster or network.",
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "description": {
+      "description": "Short description of the broadcaster or network.",
+      "type": "string"
+    },
+    "url": {
+      "description": "Website of the broadcaster or network.",
+      "$ref": "#/$defs/url"
+    },
+    "location": {
+      "description": "Country of the broadcaster.",
+      "$ref": "#/$defs/country"
+    },
+    "city": {
+      "description": "City of the broadcaster.",
+      "type": "string"
+    },
+    "languages": {
+      "description": "Languages of the broadcaster.",
+      "$ref": "#/$defs/languages"
+    },
+    "logo": {
+      "description": "Logos of the broadcaster.",
+      "$ref": "#/$defs/logos"
+    },
+    "stations": {
+      "description": "Stations or channels of the broadcaster.",
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/station" }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://"
+    },
+    "country": {
+      "description": "ISO 3166-1 alpha-2 country code, upper case.",
+      "type": "string",
+      "pattern": "^[A-Z]{2}$",
+      "examples": ["FR", "DE", "US"]
+    },
+    "languages": {
+      "description": "ISO 639-1 language codes, lower case.",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z]{2}$",
+        "examples": ["fr", "en"]
+      }
+    },
+    "logos": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/logo" }
+    },
+    "logo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url"],
+      "properties": {
+        "type": {
+          "description": "Shape of the logo.",
+          "type": "string",
+          "examples": ["square"]
+        },
+        "size": {
+          "description": "Width of the logo in pixels.",
+          "type": "integer",
+          "minimum": 1
+        },
+        "url": {
+          "description": "URL of the image.",
+          "$ref": "#/$defs/url"
+        }
+      }
+    },
+    "station": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "streams"],
+      "properties": {
+        "name": {
+          "description": "Name of the station.",
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "description": {
+          "description": "Short description of the station.",
+          "type": "string"
+        },
+        "genre": {
+          "description": "Genre of the station, as free text.",
+          "type": "string",
+          "examples": ["Dance", "Pop, Rock"]
+        },
+        "url": {
+          "description": "Web page of the station.",
+          "$ref": "#/$defs/url"
+        },
+        "languages": {
+          "description": "Languages of the station.",
+          "$ref": "#/$defs/languages"
+        },
+        "logo": {
+          "description": "Logos of the station.",
+          "$ref": "#/$defs/logos"
+        },
+        "streams": {
+          "description": "Streams of the station, one per format and bitrate.",
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/stream" }
+        }
+      }
+    },
+    "stream": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "server"],
+      "properties": {
+        "type": {
+          "description": "Audio or video format of the stream, lower case.",
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9+.-]*$",
+          "examples": ["mp3", "aac", "ogg", "hls"]
+        },
+        "bitrate": {
+          "description": "Bitrate of the stream in kbit/s.",
+          "type": "integer",
+          "minimum": 1
+        },
+        "server": {
+          "description": "Servers that deliver this stream.",
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/server" }
+        }
+      }
+    },
+    "server": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url"],
+      "properties": {
+        "url": {
+          "description": "URL of the stream on this server.",
+          "$ref": "#/$defs/url"
+        },
+        "priority": {
+          "description": "Order in which servers should be tried; 1 is tried first.",
+          "type": "integer",
+          "minimum": 1
+        },
+        "location": {
+          "description": "Country the server is located in.",
+          "$ref": "#/$defs/country"
+        }
+      }
+    }
+  }
+}
