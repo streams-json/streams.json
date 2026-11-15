@@ -1,8 +1,7 @@
 {
-  "_streams.json_info_": "streams.json is a file store in the site root use for listing stream url for radio, tv, webradio or webtv.",
-  "_streams.json_url_": "https://streams-json.rocketip.net",
-  "_streams.json_generated_at_": "2021-05-06T20:51:28+02:00",
-  "_streams.json_version_": "0.4.0",
+  "$schema": "https://raw.githubusercontent.com/streams-json/streams.json/main/streams.schema.json",
+  "version": "0.5.0",
+  "generated_at": "2026-11-15T21:00:00+01:00",
 
   "name": "NetworkRadio",
   "description": "NetworkRadio is a network of Internet station.",
@@ -26,14 +25,14 @@
       "size": 200,
       "url": "https://www.networkradio.tld/logo/dance-200x200.jpg"
     }],
-    "streams": {
+    "streams": [{
       "type": "mp3",
       "bitrate": 128,
-      "server": {
+      "server": [{
         "location": "FR",
         "url": "http://stream.networkradio.tld/dance.mp3"
-      }
-    }
+      }]
+    }]
   },
   {
     "name": "Network Radio Pop Rock",
@@ -48,10 +47,10 @@
     "streams": [{
       "type": "mp3",
       "bitrate": 128,
-      "server": {
+      "server": [{
         "location": "DE",
         "url": "http://stream.networkradio.tld/poprock.mp3"
-      }
+      }]
     },
     {
       "type": "aac",
@@ -98,11 +97,18 @@
     {
       "type": "aac",
       "bitrate": 64,
-      "url": [
-        "http://stream.networkradio.tld/hit.aac",
-        "http://stream-a.networkradio.tld/hit.aac",
-        "http://stream-b.networkradio.tld/hit.aac"
-      ]
+      "server": [{
+        "priority": 1,
+        "url": "http://stream.networkradio.tld/hit.aac"
+      },
+      {
+        "priority": 2,
+        "url": "http://stream-a.networkradio.tld/hit.aac"
+      },
+      {
+        "priority": 3,
+        "url": "http://stream-b.networkradio.tld/hit.aac"
+      }]
     }]
   }]
 }
